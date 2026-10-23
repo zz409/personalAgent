@@ -1,0 +1,7 @@
+.env
+node_modules/
+data/
+dist/
+.build-cache/
+.npm-cache/
+Personal Agent/

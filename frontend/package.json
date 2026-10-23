@@ -1,0 +1,48 @@
+{
+    "name": "personal-agent",
+    "version": "1.0.1",
+    "private": true,
+    "type": "module",
+    "main": "desktop/main.cjs",
+    "description": "Personal Agent desktop client",
+    "author": "Personal Agent",
+    "scripts": {
+        "start": "node server.cjs",
+        "desktop": "electron .",
+        "desktop:pack": "electron-builder --win --dir",
+        "desktop:build": "electron-builder --win nsis --x64"
+    },
+    "build": {
+        "appId": "com.personalagent.desktop",
+        "productName": "Personal Agent",
+        "directories": {
+            "output": "dist"
+        },
+        "files": [
+            "desktop/**/*",
+            "public/**/*",
+            "config.json",
+            "package.json"
+        ],
+        "asar": true,
+        "win": {
+            "target": "nsis",
+            "artifactName": "PersonalAgent-Setup-${version}.${ext}"
+        },
+        "nsis": {
+            "oneClick": false,
+            "perMachine": false,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true,
+            "deleteAppDataOnUninstall": false
+        }
+    },
+    "engines": {
+        "node": ">=22.13.0"
+    },
+    "devDependencies": {
+        "electron": "45.0.0",
+        "electron-builder": "26.15.3"
+    }
+}

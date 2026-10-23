@@ -1,0 +1,13 @@
+{
+    "name": "personal-agent-project",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "start": "npm --prefix backend start",
+        "backend": "npm --prefix backend start",
+        "frontend": "npm --prefix frontend start",
+        "desktop": "npm --prefix frontend run desktop",
+        "desktop:pack": "npm --prefix frontend run desktop:pack",
+        "desktop:build": "npm --prefix frontend run desktop:build"
+    }
+}

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Personal Agent</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body class="logged-out">
+        <section id="auth-panel">
+            <form id="auth-form">
+                <div class="brand">
+                    <span class="logo">P</span> Personal Agent
+                </div>
+                <h1 id="auth-title">登录你的账号</h1>
+                <p>登录后继续你的历史对话</p>
+                <label for="username">账号</label>
+                <input id="username" name="username" autocomplete="username" />
+                <label for="password">密码</label>
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    required
+                />
+                <div id="auth-error" role="alert"></div>
+                <button id="auth-submit" type="submit">登录</button>
+                <button id="auth-toggle" type="button">没有账号？注册</button>
+            </form>
+        </section>
+        <aside>
+            <div class="brand"><span class="logo">P</span> Personal Agent</div>
+            <button id="new" class="wide">＋ 新建对话</button>
+            <div class="label">历史对话</div>
+            <nav id="conversations" aria-label="历史对话"></nav>
+            <div class="label">
+                工作空间 <button id="refresh" title="刷新">↻</button>
+            </div>
+            <div id="tree"></div>
+        </aside>
+        <main>
+            <header>
+                <div>开发工作台 <span class="badge">LOCAL</span></div>
+                <div class="account-menu">
+                    <span id="model"></span>
+                    <span id="current-user"></span>
+                    <button id="logout" type="button">退出登录</button>
+                </div>
+            </header>
+            <div id="messages">
+                <div id="welcome">
+                    <div class="spark">✳</div>
+                    <h1>把想法，变成作品。</h1>
+                    <p>描述你的需求，让 Agent 在工作空间中协助你完成。</p>
+                    <div class="suggestions">
+                        <button>查看当前项目，介绍文件结构</button
+                        ><button>创建一个简洁的个人介绍页面</button
+                        ><button>检查项目中的问题并提出改进建议</button>
+                    </div>
+                </div>
+            </div>
+            <form id="composer">
+                <textarea
+                    id="prompt"
+                    placeholder="描述任务，或提出一个问题…"
+                    rows="3"
+                    required
+                ></textarea>
+                <div class="compose-bottom">
+                    <button id="stop" type="button" hidden>停止</button>
+                    <button id="send" type="submit">发送 ↑</button>
+                </div>
+            </form>
+            <footer id="workspace"></footer>
+        </main>
+        <dialog id="delete-dialog" aria-labelledby="delete-title" aria-describedby="delete-description">
+            <form method="dialog" class="delete-modal">
+                <button class="modal-close" value="cancel" aria-label="关闭">×</button>
+                <h2 id="delete-title">要删除聊天吗？</h2>
+                <p id="delete-description">此操作将永久删除该聊天及其全部消息，且无法撤销。</p>
+                <div class="modal-actions">
+                    <button value="cancel" autofocus>取消</button>
+                    <button value="delete" class="modal-danger">删除</button>
+                </div>
+            </form>
+        </dialog>
+        <script src="/app.js"></script>
+    </body>
+</html>

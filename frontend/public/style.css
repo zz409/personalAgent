@@ -1,0 +1,445 @@
+:root {
+    font-family: Inter, "Segoe UI", "Microsoft YaHei", sans-serif;
+    color: #e7e9ed;
+    background: #101114;
+    font-size: 14px;
+    color-scheme: dark;
+}
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body.logged-out > aside,
+body.logged-out > main {
+    display: none;
+}
+
+#auth-panel {
+    grid-column: 1 / -1;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    min-height: 100vh;
+}
+
+#auth-form {
+    width: min(100%, 400px);
+    background: #191c21;
+    border: 1px solid #303640;
+    border-radius: 18px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#auth-form h1,
+#auth-form p {
+    margin: 0 0 8px;
+}
+
+#auth-form input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #414955;
+    border-radius: 8px;
+    background: #101114;
+    color: #e7e9ed;
+    font: inherit;
+}
+
+#auth-submit {
+    background: #c8e9b8;
+    color: #1c2c17;
+}
+
+#auth-error {
+    color: #ffb4ab;
+    overflow-wrap: anywhere;
+}
+
+.account-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+#current-user {
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 230px minmax(340px, 1fr);
+    height: 100vh;
+}
+button {
+    font: inherit;
+    cursor: pointer;
+    background: #26292f;
+    border: 1px solid #363940;
+    border-radius: 8px;
+    color: #e7e9ed;
+    padding: 8px 12px;
+}
+button:hover {
+    background: #34383f;
+}
+button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+aside {
+    background: #17191d;
+    border-right: 1px solid #292c31;
+    padding: 24px 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.brand {
+    font-weight: 650;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.logo {
+    background: #d2f2c8;
+    color: #1e3922;
+    border-radius: 9px;
+    padding: 6px 11px;
+}
+.wide {
+    width: 100%;
+    text-align: left;
+    background: #22262b;
+}
+.label {
+    margin: 30px 7px 12px;
+    color: #939aa5;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.label button {
+    border: 0;
+    padding: 2px 7px;
+    background: transparent;
+}
+.file {
+    display: block;
+    text-align: left;
+    border: 0;
+    background: transparent;
+    width: 100%;
+    padding: 8px;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.folder {
+    color: #b5c7af;
+}
+
+#conversations {
+    max-height: 42vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.conversation-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.conversation {
+    flex: 1;
+    min-width: 0;
+    flex-shrink: 0;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid transparent;
+    background: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #aeb5bf;
+    font-size: 13px;
+}
+
+.delete-conversation {
+    flex-shrink: 0;
+    padding: 4px 8px;
+    border: 0;
+    background: transparent;
+    color: #929ba8;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.delete-conversation:hover {
+    color: #ffb4ab;
+    background: #442b2d;
+}
+
+.conversation.active {
+    background: #262e3a;
+    border-color: #3a4c67;
+    color: #edf3ff;
+}
+
+.history-empty {
+    padding: 8px;
+    color: #858d97;
+    font-size: 12px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100vh;
+}
+header {
+    height: 67px;
+    flex-shrink: 0;
+    border-bottom: 1px solid #282b31;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 28px;
+    font-size: 13px;
+}
+#model {
+    color: #8e98a5;
+    font-size: 12px;
+}
+.badge {
+    font-size: 9px;
+    border: 1px solid #424a40;
+    color: #b5ceaa;
+    padding: 3px 5px;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+#messages {
+    flex: 1;
+    overflow: auto;
+    padding: 28px max(24px, 7%);
+}
+#welcome {
+    margin: 12vh auto 0;
+    max-width: 560px;
+}
+.spark {
+    font-size: 42px;
+    color: #c9e7b9;
+}
+h1 {
+    font-size: 30px;
+    font-weight: 550;
+    letter-spacing: -1px;
+}
+p {
+    color: #969da8;
+    line-height: 1.8;
+}
+.suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 30px;
+}
+.suggestions button {
+    text-align: left;
+    background: #191c20;
+    color: #aeb5bf;
+    border-color: #2b3036;
+    padding: 14px;
+}
+.message {
+    margin-bottom: 25px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+.message.user {
+    width: fit-content;
+    max-width: 80%;
+    margin: 12px 0 36px auto;
+    background: #1b4278;
+    color: #f0f5ff;
+    padding: 12px 20px;
+    border-radius: 22px;
+    line-height: 1.65;
+    text-align: left;
+}
+.error {
+    color: #f2b3a9;
+}
+.tool {
+    font-size: 12px;
+    color: #9ba98f;
+    padding: 7px 12px;
+    border-left: 2px solid #556e48;
+    margin: 10px 0;
+}
+#activity {
+    margin: 0 0 24px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #a9bd9f;
+    overflow-wrap: anywhere;
+}
+#composer {
+    margin: 0 24px;
+    border: 1px solid #3c4348;
+    border-radius: 14px;
+    background: #1b1e23;
+    padding: 12px;
+}
+textarea {
+    font: inherit;
+    color: inherit;
+    outline: 0;
+    resize: none;
+}
+#prompt {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    line-height: 1.7;
+}
+.compose-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+#send {
+    background: #c8e9b8;
+    color: #1c2c17;
+    border: 0;
+    font-weight: 600;
+}
+footer {
+    height: 34px;
+    font-size: 10px;
+    color: #717a86;
+    text-align: center;
+    padding: 10px;
+    overflow: hidden;
+}
+@media (max-width: 1100px) {
+    body {
+        grid-template-columns: 190px 1fr;
+    }
+}
+
+#delete-dialog {
+    width: min(526px, calc(100vw - 32px));
+    max-height: calc(100vh - 32px);
+    padding: 0;
+    border: 1px solid #323232;
+    border-radius: 24px;
+    background: #292929;
+    color: #f3f3f3;
+    box-shadow: 0 24px 80px #0005;
+}
+
+#delete-dialog::backdrop {
+    background: #0006;
+}
+
+.delete-modal {
+    position: relative;
+    padding: 26px 24px 24px;
+}
+
+.delete-modal h2 {
+    margin: 0 32px 8px 0;
+    font-size: 23px;
+    font-weight: 650;
+    line-height: 1.4;
+}
+
+.delete-modal p {
+    margin: 0;
+    color: #a0a0a0;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    padding: 2px 7px;
+    border: 0;
+    background: transparent;
+    color: #bcbcbc;
+    font-size: 22px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.modal-actions button {
+    min-width: 76px;
+    padding: 8px 18px;
+    border: 1px solid #414141;
+    border-radius: 12px;
+    background: #303030;
+    font-weight: 600;
+}
+
+.modal-actions .modal-danger {
+    border-color: transparent;
+    background: #452f2f;
+    color: #f16868;
+}
+
+.modal-actions .modal-danger:hover {
+    background: #593434;
+}
+
+#delete-dialog button:focus-visible {
+    outline: 2px solid #b7c9e6;
+    outline-offset: 3px;
+}
+@media (max-width: 650px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+    aside {
+        display: none;
+    }
+    header {
+        padding: 0 18px;
+    }
+    h1 {
+        font-size: 25px;
+    }
+    #welcome {
+        margin-top: 6vh;
+    }
+}
